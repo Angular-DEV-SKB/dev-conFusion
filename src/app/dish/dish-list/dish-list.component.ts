@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Dish} from '../model/dish';
+import {DISHES} from '../model/dishes';
 
 @Component({
   selector: 'app-dish-list',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DishListComponent implements OnInit {
 
-  dishTitle = "Mr. Dog";
+  dishes: Dish[] = DISHES;
 
   constructor() { }
 
