@@ -10,10 +10,15 @@ import {DISHES} from '../model/dishes';
 export class DishListComponent implements OnInit {
 
   dishes: Dish[] = DISHES;
+  selectedDish: Dish;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDishClick(dish: Dish){
+    this.selectedDish = dish;
   }
 
 }
