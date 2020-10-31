@@ -1,4 +1,4 @@
-<mat-card>
+
   <mat-grid-list cols="2" rowHeight="3:3">
     
     <mat-grid-tile *ngFor="let dish of dishes" (click)="onDishClick(dish)">
@@ -22,7 +22,7 @@
     </mat-grid-tile>
 
   </mat-grid-list>
-</mat-card>
+
 
 <app-dish-detail [dish]="selectedDish"></app-dish-detail>
 
