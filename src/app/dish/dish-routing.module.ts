@@ -13,10 +13,10 @@ const routes: Routes = [
       }
     },
     {
-      path: 'dish-details',
+      path: 'dishDetails/:id',
       component: DishDetailComponent,
       data: {
-        title: 'Dishe Detail'
+        title: 'Dish Detail'
       }
     }
   ];

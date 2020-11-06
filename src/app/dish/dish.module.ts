@@ -7,10 +7,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
 import {DishService} from './service/dish.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [DishListComponent, DishDetailComponent],
   imports: [
+    RouterModule,
     CommonModule,
     DishRoutingModule,
     MatCardModule,
