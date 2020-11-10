@@ -6,24 +6,28 @@
           <div class="card-group">
             <div class="card p-4">
               <div class="card-body">
-                <form novalidate (ngSubmit)="onSubmit()">
+                <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" autocomplete="username" name="username" required [(ngModel)]="user.username">
+                    <input type="text" class="form-control" placeholder="Username" autocomplete="username" name="username"
+                      #username="ngModel" required [(ngModel)]="user.username">
+                    <mat-error *ngIf="username.errors?.required">Username Is required</mat-error>
                   </div>
                   <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-lock"></i></span>
                     </div>
-                    <input type="password" class="form-control" placeholder="Password" autocomplete="current-password" name="password" required [(ngModel)]="user.password">
+                    <input type="password" class="form-control" placeholder="Password" autocomplete="current-password" name="password" 
+                      #password="ngModel" required [(ngModel)]="user.password">
+                    <mat-error *ngIf="password.errors?.required">Password Is required</mat-error>
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button type="submit" class="btn btn-primary px-4">Login</button>
+                      <button [disabled]="loginForm.form.invalid" type="submit" class="btn btn-primary px-4">Login</button>
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
