@@ -4,4 +4,15 @@ import { Component } from '@angular/core';
   selector: 'app-dashboard',
   templateUrl: 'login.component.html'
 })
-export class LoginComponent { }
+export class LoginComponent { 
+
+  user = {
+    username: '',
+    password: '',
+  }
+
+  onSubmit(){
+    console.log('Form Submitted with ---', this.user);
+  }
+
+}

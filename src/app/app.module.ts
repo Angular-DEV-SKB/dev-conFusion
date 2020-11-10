@@ -20,6 +20,11 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'; 
+
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -56,7 +61,11 @@ import { RouterModule } from '@angular/router';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    RouterModule
+    RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
