@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Dish} from '../model/dish';
 import {DISHES} from '../model/dishes';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 
 @Injectable({
@@ -10,18 +12,13 @@ export class DishService {
 
   constructor() { }
 
-  getDishes(): Promise<Dish[]>{
-    return new Promise(resolve => {
-      // simulate latency for 3 seconds
-      setTimeout(() => resolve(DISHES), 3000);
-    })
+  getDishes(): Observable<Dish[]>{
+    return of(DISHES).pipe(delay(2000));
   }
 
 
-  getDishById(id): Promise<Dish>{
-    return new Promise((resolve) => {
-      // simulate latency for 3 seconds
-      setTimeout(() => resolve(DISHES.filter((dish) => dish.id === id)[0]), 3000);
-    });
+  getDishById(id): Observable<Dish>{
+    return of(DISHES.filter((dish) => dish.id === id)[0]).pipe(delay(2000));
+   
   }
 }
