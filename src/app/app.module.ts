@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms'; 
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 const APP_CONTAINERS = [
@@ -46,7 +47,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
-
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
   imports: [
     BrowserModule,
@@ -65,7 +68,10 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   declarations: [
     AppComponent,
@@ -73,7 +79,8 @@ import { RouterModule } from '@angular/router';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContactUsComponent
   ],
   providers: [{
     provide: LocationStrategy,

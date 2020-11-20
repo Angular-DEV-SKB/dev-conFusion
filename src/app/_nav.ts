@@ -20,8 +20,8 @@ export const navItems: INavData[] = [
     icon: 'icon-drop'
   },
   {
-    name: 'Dish Details',
-    url: '/dishes/dish-details',
+    name: 'Contact Us',
+    url: '/contact-us',
     icon: 'icon-pencil'
   },
   {

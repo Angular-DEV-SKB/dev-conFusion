@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
@@ -50,6 +51,13 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'contact-us',
+        component: ContactUsComponent,
+        data: {
+          title: 'Contact Us'
+        }
+      },
       {
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
