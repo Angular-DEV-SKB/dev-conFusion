@@ -50,6 +50,8 @@ import { RouterModule } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     AppComponent,

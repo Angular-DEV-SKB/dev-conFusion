@@ -1,6 +1,6 @@
 
+<div *ngIf="dishes">
   <mat-grid-list cols="2" rowHeight="3:3">
-    
     <mat-grid-tile *ngFor="let dish of dishes" (click)="onDishClick(dish)">
       <mat-card class="example-card">
         <mat-card-header>
@@ -20,8 +20,10 @@
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
-
   </mat-grid-list>
-
+</div>
+<div [hidden]="dishes">
+   <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+</div>
 
 

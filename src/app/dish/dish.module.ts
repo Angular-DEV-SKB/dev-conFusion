@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { DishDetailComponent } from './dish-detail/dish-detail.component';
 import {DishService} from './service/dish.service';
 import { RouterModule } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [DishListComponent, DishDetailComponent],
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     DishRoutingModule,
     MatCardModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   providers:[
     DishService

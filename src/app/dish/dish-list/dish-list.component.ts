@@ -19,7 +19,7 @@ export class DishListComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dishes = this.dishService.getDishes();
+    this.dishService.getDishes().then((dishes) => this.dishes = dishes);
   }
 
   onDishClick(dish: Dish){

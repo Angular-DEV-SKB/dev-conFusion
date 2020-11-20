@@ -10,12 +10,18 @@ export class DishService {
 
   constructor() { }
 
-  getDishes(): Dish[]{
-    return DISHES;
+  getDishes(): Promise<Dish[]>{
+    return new Promise(resolve => {
+      // simulate latency for 3 seconds
+      setTimeout(() => resolve(DISHES), 3000);
+    })
   }
 
 
-  getDishById(id): Dish{
-    return DISHES.filter((dish) => dish.id === id)[0];
+  getDishById(id): Promise<Dish>{
+    return new Promise((resolve) => {
+      // simulate latency for 3 seconds
+      setTimeout(() => resolve(DISHES.filter((dish) => dish.id === id)[0]), 3000);
+    });
   }
 }
