@@ -13,13 +13,16 @@ export class DishListComponent implements OnInit {
 
   dishes: Dish[];
   selectedDish: Dish;
+  errMsg: string;
 
   constructor(private dishService: DishService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dishService.getDishes().subscribe((dishes) => this.dishes = dishes);
+    this.dishService.getDishes().subscribe(
+      (dishes) => this.dishes = dishes,
+      errMsg => this.errMsg = errMsg);
   }
 
   onDishClick(dish: Dish){

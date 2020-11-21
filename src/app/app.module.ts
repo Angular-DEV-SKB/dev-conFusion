@@ -25,7 +25,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms'; 
 import {ReactiveFormsModule} from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpErrorService } from './shared/http-error.service';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -51,7 +52,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { baseURL } from './base-url';
 @NgModule({
   imports: [
     BrowserModule,
@@ -74,7 +75,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -85,10 +87,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RegisterComponent,
     ContactUsComponent
   ],
-  providers: [{
+  providers: [
+  {
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+    useClass: HashLocationStrategy,
+  },
+  {
+    provide: 'BaseURL', 
+    useValue: baseURL
+  },
+  HttpErrorService
+
+],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

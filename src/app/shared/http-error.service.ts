@@ -1,0 +1,17 @@
+import { throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+
+export class HttpErrorService{
+
+public handleError(error: HttpErrorResponse | any) {
+    let errMsg: string;
+
+    if (error.error instanceof ErrorEvent) {
+      errMsg = error.error.message;
+    } else {
+      errMsg = `${error.status} - ${error.statusText || ''} ${error.error}`;
+    }
+
+    return throwError(errMsg);
+  }
+}
